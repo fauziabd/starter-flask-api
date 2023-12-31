@@ -2,6 +2,7 @@
 from flask import Flask, request, send_file, render_template, url_for
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 from io import BytesIO
 import urllib.parse
 import time
@@ -29,7 +30,7 @@ def screenshot():
   chrome_options.add_argument('--no-sandbox')
   chrome_options.add_argument('--disable-dev-shm-usage')
 
-  driver = webdriver.Chrome(options=chrome_options)
+  driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
   driver.set_window_size(width, height)
 
