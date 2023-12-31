@@ -2,6 +2,7 @@
 from flask import Flask, request, send_file, render_template, url_for
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from io import BytesIO
 import urllib.parse
